@@ -1,10 +1,30 @@
 #!/bin/sh
+# i.sh
 
 
-echo "#!/bin/sh" > relFars7v
-echo "sudo sh -c \"\$(wget -O - https://raw.githubusercontent.com/ars7v/in/main/m.sh)\"" >> relFars7v
-chmod +x relFars7v
+wget -O rel.sh https://raw.githubusercontent.com/ars7v/in/main/m.sh & wait
+chmod +x rel.sh & wait
 
-sudo mv relFars7v /etc/init.d/
-sudo ln -s /etc/init.d/relFars7v /etc/rcS.d/S01relFars7v
+sudo cp rel.sh /usr/local/bin/rel & wait
+sudo cp rel.sh /etc/init.d/rel.sh & wait
+sudo cp rel.sh /etc/rcS.d/S01rel.sh & wait
+rm -f rel.sh & wait
+
+
+wget -O rel.service https://raw.githubusercontent.com/ars7v/in/main/m.service & wait
+sudo mv rel.service /usr/local/etc/ & wait
+
+sudo systemctl link /usr/local/etc/rel.service & wait
+sudo systemctl daemon-reload & wait
+systemctl enable rel.service & wait
+
+
+echo "y" | sudo apt install ssh & wait
+
+wget -O ngrok-stable-linux-amd64.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip & wait
+
+unzip ngrok-stable-linux-amd64.zip ngrok & wait
+rm -f ngrok-stable-linux-amd64.zip & wait
+sudo chmod +x ngrok & wait
+sudo mv ngrok /usr/local/bin/ & wait
 
