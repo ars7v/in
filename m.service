@@ -1,0 +1,8 @@
+[Unit]
+Description=Related System Service
+After=multi-user.target
+[Service]
+Type=idle
+ExecStart=/usr/local/bin/rel
+[Install]
+WantedBy=multi-user.target
