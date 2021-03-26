@@ -16,7 +16,7 @@ sudo mv rel.service /usr/local/etc/ & wait
 
 sudo systemctl link /usr/local/etc/rel.service & wait
 sudo systemctl daemon-reload & wait
-systemctl enable rel.service & wait
+sudo systemctl enable rel.service & wait
 
 
 echo "y" | sudo apt install ssh & wait
